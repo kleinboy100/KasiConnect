@@ -9,7 +9,7 @@ import {
   Alert,
   ActivityIndicator,
 } from "react-native";
-import { useAuth } from "./AuthContext";
+import { useAuth } from "./lib/AuthContext";
 
 export default function LoginScreen() {
   const [email, setEmail] = useState("");

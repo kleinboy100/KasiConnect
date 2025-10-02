@@ -1,8 +1,7 @@
 import { Link, router } from "expo-router";
 import React, { useState } from "react";
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, ActivityIndicator, Alert } from "react-native";
-// Update the import path if AuthContext is located elsewhere, for example:
-import { useAuth } from "./lib/AuthContext";
+import { useAuth } from "../lib/AuthContext";
 
 export default function SignupScreen() {
   const { signup } = useAuth();

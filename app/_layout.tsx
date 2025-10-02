@@ -1,7 +1,7 @@
 import { Slot, usePathname, useRouter } from "expo-router";
 import React, { useEffect } from "react";
 import { ActivityIndicator, View } from "react-native";
-import { AuthProvider, useAuth } from "./AuthContext";
+import { AuthProvider, useAuth } from "./lib/AuthContext";
 
 function AuthGate() {
   const { user, initializing } = useAuth();

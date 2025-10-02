@@ -1,14 +1,11 @@
 import { Link } from "expo-router";
 import React from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import { useAuth } from "./AuthContext";
 
 // The logo import is no longer needed
 // const logo = require("../assets/images/logo.jpg"); 
 
 export default function Header() {
-  const { isAuthenticated, logout } = useAuth();
-
   return (
     <View>
       {/* Main Header */}
@@ -35,25 +32,15 @@ export default function Header() {
 
         {/* Right Side: Auth and Profile */}
         <View style={styles.rightSide}>
-          {isAuthenticated ? (
-            <>
-              <TouchableOpacity onPress={logout}>
-                <Text style={styles.authText}>Log Out</Text>
-              </TouchableOpacity>
-              <Link href="/profile" asChild>
-                <TouchableOpacity style={{ marginLeft: 12 }}>
-                  <View style={styles.profileIcon} />
-                </TouchableOpacity>
-              </Link>
-            </>
-          ) : (
-            <View style={styles.authLinks}>
-              <Link href="/login">
+          <View style={styles.authLinks}>
+            <Link href="/login" asChild>
+              <TouchableOpacity>
                 <Text style={styles.authText}>Log In</Text>
-              </Link>
-
-            </View>
-          )}
+              </TouchableOpacity>
+            </Link>
+            {/* You can add a Sign Up link here if you want */}
+            {/* <Link href="/signup" asChild><TouchableOpacity><Text style={styles.authText}>Sign Up</Text></TouchableOpacity></Link> */}
+          </View>
         </View>
       </View>
 
